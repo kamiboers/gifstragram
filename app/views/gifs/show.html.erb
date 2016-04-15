@@ -1,0 +1,9 @@
+<h1><%= @gif.search_terms %>
+<div>
+
+<iframe src="<%= @gif.url %>" width="480" height="471" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http:<%= @gif.url %>">via GIPHY</a></p>
+<div class="btn"><%= link_to "Edit Gif", edit_gif_path(@gif) %></div>
+<div class="btn"><%= link_to "Delete Gif", gif_path(@gif), method: :delete %></div>
+
+
+</div>

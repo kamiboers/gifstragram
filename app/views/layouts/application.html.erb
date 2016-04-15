@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gifstragram</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="application.css" media="screen" rel="stylesheet" />
+<body>
+<div class="navbar topper">
+<div class="navbar-brand"><h1><%= link_to "GIFSTAGRAM", gifs_path %></h1></div><div class="navbar-btn btn btn-large btn-primary pull-right"><%= link_to "Add a Gif", new_gif_path %></div>
+</div>
+<%= yield %>
+
+</body>
+</html>

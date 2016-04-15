@@ -1,0 +1,5 @@
+<%= form_for @gif do |f| %>
+<%= f.text_field :search_terms, placeholder: 'search terms' %>
+<%= f.text_field :url, placeholder: 'no url necessary' %>
+<%= f.submit "Add Gif" %>
+<% end %>

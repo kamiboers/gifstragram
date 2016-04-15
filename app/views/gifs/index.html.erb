@@ -1,0 +1,31 @@
+
+<div class="jumbotron">
+  <div class="container">
+  <h1>ALL THE GIFS</h1>
+  
+
+  <div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categories <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><%= link_to "Your Mom", gifs_path %></li>
+   <li><%= link_to "Not Your Mom", gifs_path %></li>
+   <li><%= link_to "WTF", gifs_path %></li>
+  </ul>
+</div>
+
+
+  </div>
+</div>
+
+<% @gifs.each do |gif| %>
+<div class="col-md-4 well well-lg gif_display">
+<h3><%= gif.search_terms %></h3>
+<div class="thumbnail text-center media-middle"><iframe src="<%= gif.url %>" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http:<%= gif.url %>">via GIPHY</a></p></div>
+<div class="btn btn-default btn-primary btn-sm pull-right"><%= link_to "Edit Gif", edit_gif_path(gif) %></div>
+<div class="btn btn-default btn-danger btn-sm pull-right"><%= link_to "Delete Gif", gif_path(gif), method: :delete %></div>
+</div>
+<% end %>
+
+<%= link_to "Add a Gif", new_gif_path %>

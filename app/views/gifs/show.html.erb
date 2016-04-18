@@ -1,9 +1,17 @@
 <h1><%= @gif.search_terms %>
+	<% gif_id = @gif.id %>
 <div>
 
 <iframe src="<%= @gif.url %>" width="480" height="471" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http:<%= @gif.url %>">via GIPHY</a></p>
+<% if current_user && current_user.admin? %>
 <div class="btn"><%= link_to "Edit Gif", edit_gif_path(@gif) %></div>
 <div class="btn"><%= link_to "Delete Gif", gif_path(@gif), method: :delete %></div>
-
+<% else %>
+<% unless current_user.favorite_gifs.exists?(id: gif_id) %>
+<div class="btn btn-danger"><%= link_to "<3 Favorite Gif", favorite_gifs_path(gif_id: gif_id), method: :post %></div>
+<% else %>
+<div class="btn btn-danger"><%= link_to ":( Unfavorite Gif", favorite_gif_path(gif_id), method: :delete %></div>
+<% end %>
+<% end %>
 
 </div>

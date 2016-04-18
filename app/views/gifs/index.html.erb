@@ -21,11 +21,11 @@
 
 <% @gifs.each do |gif| %>
 <div class="col-md-4 well well-lg gif_display">
-<h3><%= gif.search_terms %></h3>
+<h3><%= link_to "#{gif.search_terms}", gif_path(gif) %></h3>
 <div class="thumbnail text-center media-middle"><iframe src="<%= gif.url %>" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http:<%= gif.url %>">via GIPHY</a></p></div>
+<% if current_user && current_user.admin? %>
 <div class="btn btn-default btn-primary btn-sm pull-right"><%= link_to "Edit Gif", edit_gif_path(gif) %></div>
 <div class="btn btn-default btn-danger btn-sm pull-right"><%= link_to "Delete Gif", gif_path(gif), method: :delete %></div>
+<% end %>
 </div>
 <% end %>
-
-<%= link_to "Add a Gif", new_gif_path %>

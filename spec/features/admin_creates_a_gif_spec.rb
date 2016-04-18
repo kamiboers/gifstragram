@@ -8,6 +8,7 @@ RSpec.feature "Admin submits a new giphy" do
     click_on "Add a Gif"
     
     fill_in "gif_search_terms", with: giphy_search
+    fill_in "gif[search_terms]", with: giphy_search
     click_on "Add Gif"
 
     expect(page).to have_content giphy_search

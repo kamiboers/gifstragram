@@ -1,15 +1,3 @@
-.gif_display {
-  /*background-color: #F0F8FF;
-  align-content: center;
-  border: 3px solid #CFF;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 50px;
-  padding: 10px;
-  padding-bottom: 25px;*/
-}
-
-
 .topper {
   height: 125px;
   background-color: #80bfff;
@@ -18,17 +6,11 @@
   margin: 0px auto;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a.visited {
-  text-decoration: none;
-  color: white;
+.butt {
+  color: white !important;
 }
 
 a.hover {
   text-decoration: none;
-  color: red;
 }
+
